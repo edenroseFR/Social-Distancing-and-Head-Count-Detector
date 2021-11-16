@@ -127,7 +127,7 @@ if __name__ == '__main__':
         if args.video_path != '':
             cap = cv2.VideoCapture(args.video_path)
         else:
-            cap = cv2.VideoCapture(2)
+            cap = cv2.VideoCapture(1)
 
         if args.save:
             width = int(cap.get(3))
