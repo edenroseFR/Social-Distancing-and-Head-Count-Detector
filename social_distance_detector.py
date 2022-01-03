@@ -71,7 +71,7 @@ ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
 # initialize the video stream and pointer to output video file
 print("[INFO] accessing video stream...")
-vs = cv2.VideoCapture(2)
+vs = cv2.VideoCapture(1)
 writer = None
 
 # loop over the frames from the video stream
@@ -98,6 +98,7 @@ while True:
 	M=np.array([])
 	dst=np.array([])
 	socialdistance=50
+	meters=1
 	if a!=0 and b!=0 and c!=0 and d!=0:
 		size = myvar.split(',')
 		size[0] = int(size[0])
@@ -107,11 +108,11 @@ while True:
 		if size[0]>=size[1]:
 			x=1000
 			y=1000*(size[1]/size[0])
-			socialdistance=int(1000/size[0])
+			socialdistance=int((1000/size[0])*meters)
 		else:
 			y=1000
 			x=1000*(size[0]/size[1])
-			socialdistance=int(1000/size[1])
+			socialdistance=int((1000/size[1])*meters)
 		x=int(x)
 		y=int(y)
 		print(x,y,socialdistance)
