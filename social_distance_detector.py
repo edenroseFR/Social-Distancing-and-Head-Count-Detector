@@ -67,7 +67,7 @@ if config.USE_GPU:
 
 # determine only the *output* layer names that we need from YOLO
 ln = net.getLayerNames()
-ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 
 # initialize the video stream and pointer to output video file
 print("[INFO] accessing video stream...")
